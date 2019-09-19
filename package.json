@@ -1,0 +1,14 @@
+{
+  "name": "mongodb-workshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ravan Scafi <rscafi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "dependencies": {
+    "@mdx-deck/themes": "2.5.0",
+    "mdx-deck": "2.5.1"
+  }
+}
