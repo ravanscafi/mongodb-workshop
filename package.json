@@ -8,7 +8,6 @@
     "start": "mdx-deck deck.mdx -h 0.0.0.0"
   },
   "dependencies": {
-    "@mdx-deck/themes": "2.5.0",
-    "mdx-deck": "2.5.1"
+    "mdx-deck": "1.10.2"
   }
 }

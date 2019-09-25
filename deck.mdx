@@ -1,34 +1,85 @@
-import { Head } from 'mdx-deck'
-import { future } from '@mdx-deck/themes'
-import prism from '@mdx-deck/themes/syntax-highlighter-prism'
-export const theme = prism(future)
+import { Head, Appear, Image } from 'mdx-deck'
+import { future } from 'mdx-deck/themes'
+import SyntaxHighlighter from 'react-syntax-highlighter/prism-light'
+import atomDark from 'react-syntax-highlighter/styles/prism/atom-dark'
+
+import FullPageImage from './components/full-page-image'
+import TwitterLink from './components/twitter-link'
+
+export const theme = future
 
 <Head>
 	<title>MongoDB Workshop</title>
 </Head>
 
-![](mongodb.png)
+![](images/mongodb.png)
 
-O que você precisa saber para começar
+MongoDB com PHP:<br />
+_pensando NoSQL_
+
+<br />
+<br />
+
+<TwitterLink href="https://twitter.com/ravanscafi">
+    @ravanscafi
+</TwitterLink>
+
+---
+
+<SyntaxHighlighter language='javascript' style={atomDark}>
+    {`db.users.findOne({name: "Ravan Scafi"})`}
+</SyntaxHighlighter>
+
+---
+
+<SyntaxHighlighter language='javascript' style={atomDark}>
+{`{
+	"_id" : ObjectId("5d8ba3584bc1688665b19199"),
+	"name" : "Ravan Scafi",
+    "blog" : "https://ravan.me",
+    "company" : {
+        "name": "Leroy Merlin",
+        "role": "Backend Developer"
+    }
+	"communities" : [ "PHPSP", "LaravelSP" ],
+	"created_at" : ISODate("2019-09-25T17:27:07.709Z"),
+	"updated_at" : ISODate("2019-09-25T17:27:07.709Z")
+}`}
+</SyntaxHighlighter>
+
+---
+
+# :warning:
+
+O conteúdo é só a ponta do Iceberg 
+
+![](images/iceberg.svg)
+
+---
+
+# :warning:
+
+Pode levantar a mão a qualquer momento!
+
+# :raising_hand:
+
+---
+
+<FullPageImage src="images/prisma-comparison.jpg" alt="Comparing Database Types" />
 
 ---
 
 # MongoDB
 
-- NoSQL
-- Schemaless
-- Document-based
-- "JSON"
-
+<Appear>
+<li>NoSQL</li>
+<li>Schemaless</li>
+<li>Document-based</li>
+<li>"JSON"</li>
+</Appear>
 ---
 
-<iframe src="https://db-engines.com/en/ranking" style={{width: '98vw', height: '98vh'}}>
-</iframe>
-
----
-
-<iframe src="https://techblog.leroymerlin.com.br/2017-08-08-devo-usar-nosql-e-mongodb/" style={{width: '98vw', height: '98vh'}}>
-</iframe>
+<FullPageImage src="images/db-ranking.png" alt="DB-Engine Ranking" />
 
 ---
 
@@ -38,10 +89,10 @@ O que você precisa saber para começar
 
 ## Subindo no Docker
 
-```bash
-docker run --name mongo-test -p 27017:27017 -d mongo
-docker exec -it mongo-test mongo
-```
+<SyntaxHighlighter language='bash' style={atomDark}>
+{`docker run --name mongo-test -p 27017:27017 -d mongo\n
+docker exec -it mongo-test mongo`}
+</SyntaxHighlighter>
 
 ---
 
@@ -49,13 +100,71 @@ docker exec -it mongo-test mongo
 
 ---
 
+(ok, agora pode descer)
+
+<SyntaxHighlighter language='bash' style={atomDark}>
+{`docker stop mongo-test\n
+docker rm mongo-test`}
+</SyntaxHighlighter>
+
+---
+
+<FullPageImage src="images/leroy-home.jpg" alt="Leroy Merlin - Home" />
+
+---
+
+<FullPageImage src="images/leroy-furadeira.jpg" alt="Leroy Merlin - Furadeira" />
+
+---
+
+<FullPageImage src="images/leroy-cimento.jpg" alt="Leroy Merlin - Cimento" />
+
+---
+
+<FullPageImage src="images/leroy-churrasqueira.jpg" alt="Leroy Merlin - Churrasqueira" />
+
+---
+
+<FullPageImage src="images/leroy-almofada.jpg" alt="Leroy Merlin - Almofada" />
+
+---
+
+<FullPageImage src="images/leroy-palmeira.jpg" alt="Leroy Merlin - Palmeira" />
+
+---
+
 ## Tá, e aí?
 
 ---
 
-# Mongolid
+<FullPageImage src="images/devo-usar-mongodb.png" alt="Devo usar MongoDB e NoSQL?" />
 
-![](https://user-images.githubusercontent.com/1991286/28967747-fe5c258a-78f2-11e7-91c7-8850ffb32004.png)
+---
+
+# Modelo EAV
+### Entity-Attribute-Value
+
+(é o modelo do Magento)
+
+---
+
+![](images/eav.png)
+
+---
+
+<FullPageImage src="images/doctrine-mongodb.png" alt="Doctrine MongoDB" />
+
+---
+
+<FullPageImage src="images/jenssegers-mongodb.png" alt="Jenssegers Laravel-MongoDB" />
+
+---
+
+E então...
+
+---
+
+<FullPageImage src="images/mongolid.png" alt="Mongolid" />
 
 ---
 
@@ -65,9 +174,8 @@ docker exec -it mongo-test mongo
 
 # Aplicação
 
-```
-git clone \
-    git@github.com:ravanscafi/mongodb-workshop-base.git
+```bash
+git clone git@github.com:ravanscafi/mongodb-workshop-base.git
 cd mongodb-workshop-base
 ```
 
@@ -86,7 +194,39 @@ e abrir o [localhost](http://localhost)
 
 # Recursos
 
+- [Comparing Database Types: How Database Types Evolved to Meet Different Needs](https://www.prisma.io/blog/comparison-of-database-models-1iz9u29nwn37)
+- [DB-Engines Ranking](https://db-engines.com/en/ranking)
+- [Devo usar NoSQL e MongoDB?](https://medium.com/leroy-merlin-brasil-tech/devo-usar-nosql-e-mongodb-951693aa0d34)
+
+---
+
+# Onde ir a seguir?
+
 - [Mongolid](https://github.com/leroy-merlin-br/mongolid/)
 - [Mongolid Laravel](https://github.com/leroy-merlin-br/mongolid-laravel/)
 - [MongoDB University](https://university.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
+- [MongoDB Compass](https://www.mongodb.com/download-center/compass)
+
+---
+<div style={{width: '100vw', height: '100vh', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: '#020202'}}>
+
+<img src="images/leroymerlin.svg" />
+
+<br />
+
+## Estamos Contratando!
+
+[bit.ly/leroymerlin-backend](http://bit.ly/leroymerlin-backend)<br />
+[bit.ly/leroymerlin-devops](http://bit.ly/leroymerlin-devops)<br />
+[bit.ly/leroymerlin-frontend](http://bit.ly/leroymerlin-frontend)
+
+</div>
+
+---
+
+# Obrigado!
+
+<TwitterLink href="https://twitter.com/ravanscafi">
+    @ravanscafi
+</TwitterLink>
