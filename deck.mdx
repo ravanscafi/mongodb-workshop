@@ -12,6 +12,8 @@ export const theme = future
 	<title>MongoDB Workshop</title>
 </Head>
 
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
+
 ![](images/mongodb.png)
 
 MongoDB com PHP:<br />
@@ -83,11 +85,12 @@ Pode levantar a mão a qualquer momento!
 
 ---
 
-# Bora lá então :)
+# Bora lá então 
+# :sunglasses:
 
 ---
 
-## Subindo no Docker
+## Subindo o MongoDB no Docker
 
 <SyntaxHighlighter language='bash' style={atomDark}>
 {`docker run --name mongo-test -p 27017:27017 -d mongo\n
@@ -133,11 +136,11 @@ docker rm mongo-test`}
 
 ---
 
-## Tá, e aí?
+## E como modelar isso?
 
 ---
 
-<FullPageImage src="images/devo-usar-mongodb.png" alt="Devo usar MongoDB e NoSQL?" />
+<img src="images/nazare.gif" width="600" />
 
 ---
 
@@ -152,11 +155,35 @@ docker rm mongo-test`}
 
 ---
 
+Campo JSON? Não existia.
+
+---
+
+### O MongoDB parecia uma boa opção...
+
+---
+
+### mas...
+
+---
+
 <FullPageImage src="images/doctrine-mongodb.png" alt="Doctrine MongoDB" />
 
 ---
 
 <FullPageImage src="images/jenssegers-mongodb.png" alt="Jenssegers Laravel-MongoDB" />
+
+---
+
+As soluções existentes pra época
+
+pareciam tentar encaixar o MongoDB
+
+_no modelo relacional_
+
+---
+
+<img src="images/kid.gif" width="600" />
 
 ---
 
@@ -172,23 +199,41 @@ E então...
 
 ---
 
-# Aplicação
-
-```bash
-git clone git@github.com:ravanscafi/mongodb-workshop-base.git
-cd mongodb-workshop-base
-```
+<FullPageImage src="images/devo-usar-mongodb.png" alt="Devo usar MongoDB e NoSQL?" />
 
 ---
 
-```bash
-cp .env.example .env
-docker-compose up -d
-docker-compose exec web php artisan key:generate
-docker-compose exec web composer install
-```
+# Aplicação
+
+<SyntaxHighlighter language='bash' style={atomDark}>
+{`git clone git@github.com:ravanscafi/mongodb-workshop-base.git\n
+cd mongodb-workshop-base`}
+</SyntaxHighlighter>
+
+---
+
+<SyntaxHighlighter language='bash' style={atomDark}>
+{`cp .env.example .env\n
+docker-compose up -d\n
+docker-compose exec web php artisan key:generate\n
+docker-compose exec web composer install`}
+</SyntaxHighlighter>
+
+---
 
 e abrir o [localhost](http://localhost)
+
+# :rocket:
+
+---
+
+<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '6rem', lineHeight: '5rem', marginBottom: '5rem'}}>
+    To embed<br />
+    or<br />
+    not to embed?
+</div>
+
+![O Pensador](images/the-thinker.png)
 
 ---
 
