@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "mdx-deck deck.mdx -h 0.0.0.0",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build deck.mdx && cp -R images/ dist/"
   },
   "dependencies": {
     "mdx-deck": "1.10.2"
