@@ -5,11 +5,13 @@ import atomDark from 'react-syntax-highlighter/styles/prism/atom-dark'
 
 import FullPageImage from './components/full-page-image'
 import TwitterLink from './components/twitter-link'
+import useFullscreenKeys from './components/use-fullscreen-keys'
 
 export const theme = future
 
 <Head>
-	<title>MongoDB Workshop</title>
+    {useFullscreenKeys()}
+    <title>MongoDB Workshop</title>
 </Head>
 
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" />
@@ -19,7 +21,6 @@ export const theme = future
 MongoDB com PHP:<br />
 _pensando NoSQL_
 
-<br />
 <br />
 
 <TwitterLink href="https://twitter.com/ravanscafi">
@@ -67,7 +68,7 @@ Pode levantar a mão a qualquer momento!
 
 ---
 
-<FullPageImage src="images/prisma-comparison.jpg" alt="Comparing Database Types" />
+<FullPageImage src="images/prisma-comparison.png" alt="Comparing Database Types" />
 
 ---
 
@@ -163,7 +164,17 @@ Campo JSON? Não existia.
 
 ---
 
+<FullPageImage src="images/ext-mongodb.png" alt="PHP MongoDB Extension" />
+
+---
+
+<FullPageImage src="images/lib-mongodb.png" alt="PHP MongoDB Library" />
+
+---
+
+
 ### mas...
+### queríamos um _Active Record_
 
 ---
 
@@ -187,7 +198,7 @@ _no modelo relacional_
 
 ---
 
-E então...
+Então...
 
 ---
 
@@ -195,7 +206,8 @@ E então...
 
 ---
 
-# Mongolid Laravel
+
+<FullPageImage src="images/mongolid-laravel.png" alt="Mongolid Laravel" />
 
 ---
 
@@ -207,6 +219,7 @@ E então...
 
 <SyntaxHighlighter language='bash' style={atomDark}>
 {`git clone git@github.com:ravanscafi/mongodb-workshop-base.git\n
+# ou https://github.com/ravanscafi/mongodb-workshop-base.git\n
 cd mongodb-workshop-base`}
 </SyntaxHighlighter>
 
@@ -227,10 +240,16 @@ e abrir o [localhost](http://localhost)
 
 ---
 
-<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '6rem', lineHeight: '5rem', marginBottom: '5rem'}}>
-    To embed<br />
-    or<br />
-    not to embed?
+<div style={{overflowY: 'scroll', overflowX: 'hidden', minWidth: '100vw', minHeight: '100vh', position: 'relative'}}>
+    <img src="images/localhost.jpg" alt="Localhost" style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, objectFit: 'cover'}}/>
+</div>
+
+---
+
+<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '5rem', lineHeight: '4rem', marginBottom: '4rem'}}>
+    To em<u>be</u>d<br />
+    - or -<br />
+    not to em<u>be</u>d?
 </div>
 
 ![O Pensador](images/the-thinker.png)
@@ -254,23 +273,29 @@ e abrir o [localhost](http://localhost)
 - [MongoDB Compass](https://www.mongodb.com/download-center/compass)
 
 ---
-<div style={{width: '100vw', height: '100vh', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: '#020202'}}>
-
+<div style={{width: '100vw', height: '100vh', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: '#020202', padding: '.5rem'}}>
 <img src="images/leroymerlin.svg" />
-
-<br />
 
 ## Estamos Contratando!
 
 [bit.ly/leroymerlin-backend](http://bit.ly/leroymerlin-backend)<br />
 [bit.ly/leroymerlin-devops](http://bit.ly/leroymerlin-devops)<br />
 [bit.ly/leroymerlin-frontend](http://bit.ly/leroymerlin-frontend)
-
 </div>
 
 ---
 
-# Obrigado!
+<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '8rem', marginBottom: '6rem'}}>
+Dúvidas?
+</div>
+
+# :raising_hand:
+
+---
+
+<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '8rem', marginBottom: '6rem'}}>
+Obrigado!
+</div>
 
 <TwitterLink href="https://twitter.com/ravanscafi">
     @ravanscafi
