@@ -1,11 +1,10 @@
 import { Head, Appear, Image } from 'mdx-deck'
 import { future } from 'mdx-deck/themes'
-import SyntaxHighlighter from 'react-syntax-highlighter/prism-light'
-import atomDark from 'react-syntax-highlighter/styles/prism/atom-dark'
 
 import FullPageImage from './components/full-page-image'
 import TwitterLink from './components/twitter-link'
 import useFullscreenKeys from './components/use-fullscreen-keys'
+import SyntaxHighlighter from './components/syntax-highlighter'
 
 export const theme = future
 
@@ -35,13 +34,13 @@ _pensando NoSQL_
 
 ---
 
-<SyntaxHighlighter language='javascript' style={atomDark}>
+<SyntaxHighlighter language='javascript'>
     {`db.users.findOne({name: "Ravan Scafi"})`}
 </SyntaxHighlighter>
 
 ---
 
-<SyntaxHighlighter language='javascript' style={atomDark}>
+<SyntaxHighlighter language='javascript'>
 {`{
 	"_id" : ObjectId("5d8ba3584bc1688665b19199"),
 	"name" : "Ravan Scafi",
@@ -60,7 +59,7 @@ _pensando NoSQL_
 
 # :warning:
 
-O conteúdo é só a ponta do Iceberg 
+O conteúdo será só a ponta do Iceberg
 
 ![](images/iceberg.svg)
 
@@ -99,7 +98,7 @@ Pode levantar a mão a qualquer momento!
 
 ## Subindo o MongoDB no Docker
 
-<SyntaxHighlighter language='bash' style={atomDark}>
+<SyntaxHighlighter language='bash'>
 {`docker run --name mongo-test -p 27017:27017 -d mongo\n
 docker exec -it mongo-test mongo`}
 </SyntaxHighlighter>
@@ -112,7 +111,7 @@ docker exec -it mongo-test mongo`}
 
 (ok, agora pode descer)
 
-<SyntaxHighlighter language='bash' style={atomDark}>
+<SyntaxHighlighter language='bash'>
 {`docker stop mongo-test\n
 docker rm mongo-test`}
 </SyntaxHighlighter>
@@ -200,7 +199,7 @@ _no modelo relacional_
 
 ---
 
-<img src="images/kid.gif" width="600" />
+<img src="images/kid.gif" width="500" />
 
 ---
 
@@ -221,21 +220,16 @@ Então...
 
 ---
 
-# Aplicação
-
-<SyntaxHighlighter language='bash' style={atomDark}>
-{`git clone git@github.com:ravanscafi/mongodb-workshop-base.git\n
-# ou https://github.com/ravanscafi/mongodb-workshop-base.git\n
-cd mongodb-workshop-base`}
-</SyntaxHighlighter>
+# Subindo nossa aplicação
 
 ---
 
-<SyntaxHighlighter language='bash' style={atomDark}>
-{`cp .env.example .env\n
+<SyntaxHighlighter language='bash'>
+{`git clone git@github.com:ravanscafi/mongodb-workshop-base.git\n
+# ou https://github.com/ravanscafi/mongodb-workshop-base.git\n
+cd mongodb-workshop-base\n
 docker-compose up -d\n
-docker-compose exec web php artisan key:generate\n
-docker-compose exec web composer install`}
+docker-compose exec php composer setup`}
 </SyntaxHighlighter>
 
 ---
@@ -252,7 +246,11 @@ e abrir o [localhost](http://localhost)
 
 ---
 
-<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '5rem', lineHeight: '4rem', marginBottom: '4rem'}}>
+<FullPageImage src="images/validation.png" alt="Laravel Validation Rules" />
+
+---
+
+<div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '4.5rem', lineHeight: '4rem', marginBottom: '4rem'}}>
     To em<u>be</u>d<br />
     - or -<br />
     not to em<u>be</u>d?
@@ -262,7 +260,24 @@ e abrir o [localhost](http://localhost)
 
 ---
 
-# Recursos
+O Mongolid pode evoluir muito!
+<Appear>
+(e vocês podem ajudar!)
+</Appear>
+
+---
+
+## Considerações
+<Appear>
+<li>O MongoDB evoluiu muito, com validações, "joins", transactions...</li>
+<li>Outros bancos correram muito atrás de recursos do MongoDB</li>
+<li>Avalie seu uso, não existe bala de prata!</li>
+</Appear>
+
+
+---
+
+## Recursos
 
 - [Comparing Database Types: How Database Types Evolved to Meet Different Needs](https://www.prisma.io/blog/comparison-of-database-models-1iz9u29nwn37)
 - [DB-Engines Ranking](https://db-engines.com/en/ranking)
@@ -270,13 +285,17 @@ e abrir o [localhost](http://localhost)
 
 ---
 
-# Onde ir a seguir?
+## Onde ir a seguir?
 
 - [Mongolid](https://github.com/leroy-merlin-br/mongolid/)
 - [Mongolid Laravel](https://github.com/leroy-merlin-br/mongolid-laravel/)
 - [MongoDB University](https://university.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 - [MongoDB Compass](https://www.mongodb.com/download-center/compass)
+
+---
+
+<FullPageImage src="images/university.png" alt="MongoDB University" />
 
 ---
 <div style={{width: '100vw', height: '100vh', backgroundColor: '#f2f2f2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: '#020202', padding: '.5rem'}}>
@@ -302,6 +321,8 @@ Dúvidas?
 <div style={{fontFamily: 'Lobster, Georgia, serif', fontSize: '8rem', marginBottom: '6rem'}}>
 Obrigado!
 </div>
+
+[bit.ly/avalie-phpcs-2019](http://bit.ly/avalie-phpcs-2019)
 
 <TwitterLink href="https://twitter.com/ravanscafi">
     @ravanscafi
